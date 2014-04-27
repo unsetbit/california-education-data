@@ -10,7 +10,9 @@ cd california-education-data
 node unzip.js
 ```
 
-The data will be available in `data/csv`. `data/csv/api` is the Acedemic Performance Index data from http://www.cde.ca.gov/ta/ac/ap/apidatafiles.asp . `data/csv/sacs` and `data/csv/alt` are the Annual Financial Data from http://www.cde.ca.gov/ds/fd/fd/ .
+The data will be available in `data/csv`. 
+* `data/csv/api` is the Acedemic Performance Index data from http://www.cde.ca.gov/ta/ac/ap/apidatafiles.asp . 
+* `data/csv/sacs` and `data/csv/alt` are the Annual Financial Data from http://www.cde.ca.gov/ds/fd/fd/ .
 
 ## Updating the data sets
 Here is how the data was generated (and how to update it):
