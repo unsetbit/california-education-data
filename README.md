@@ -7,7 +7,7 @@ You must first install [Node.js](http://nodejs.org/)
 ```
 git clone https://github.com/oztu/california-education-data.git
 cd california-education-data
-node unzip.js
+node unzipCsvs.js
 ```
 
 The data will be available in `data/csv`. 
