@@ -1,4 +1,5 @@
-# California Department of Education Data
+# Public CDE Data
+CDE is California Department of Education
 
 ## Academic Performance Index (API) Data
 This data is in `data/csv/api`
@@ -10,9 +11,9 @@ To update this data: download this git repo, execute npm install, then run `node
 The files are retrieved from http://www.cde.ca.gov/ta/ac/ap/apidatafiles.asp. The data files are converted to CSV and the layout html pages are converted to JSON files. For convenience, a header line is added to the CSV which is the names of the fields from the layout file.
 
 ## Annual Financial  Data (SACS and ALT)
-This data is in `data/csv/sacs` and `data/csv/alt`. Due to githubs limitation on large files I had to gzip the csvs, you can run `node unzipCsvs.js` to unzip them all.
+This data is in `data/csv/sacs` and `data/csv/alt`. Due to GitHub's limitation on large files I had to gzip the csvs, you can run `node unzipCsvs.js` to unzip them all.
 
 The origin for this data is here: http://www.cde.ca.gov/ds/fd/fd/
 
-This data is a bit trickier to update since they're distributed as self-extracting exes. I've downloaded the exes, extracted them, resulting in .mdb files, then ran [mdbToCsv](https://github.com/oztu/mdbToCsv) against them to generate to csv files. I then ran `node zipCsvs.js` to gzip them in order to appease github's limitation on large file sizes.
+This data is a bit trickier to update since they're distributed as self-extracting exes. I've downloaded the exes, extracted them, then ran the resulting .mdb files against [mdbToCsv](https://github.com/oztu/mdbToCsv) to generate to csv files. Finally, I ran `node zipCsvs.js` to gzip them in order to appease GitHub's limitation on large file sizes.
 
