@@ -1,0 +1,5 @@
+node_modules
+.dat
+tmp
+data/mdb
+data/**/*.csv

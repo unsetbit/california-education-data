@@ -1,0 +1,22 @@
+{
+  "name": "california-education-data",
+  "version": "0.0.0",
+  "description": "Crawled and json-ified data on California public schools",
+  "main": "crawl.js",
+  "dependencies": {
+    "cheerio": "~0.15.0",
+    "request": "^2.34.0",
+    "csv": "^0.3.7",
+    "winston": "^0.7.3",
+    "zip": "^1.2.0",
+    "event-stream": "^3.1.2",
+    "lodash": "^2.4.1",
+    "odbc": "^0.6.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "APACHE 2"
+}
