@@ -25,12 +25,11 @@ var walk = function(dir, done) {
   });
 };
 
-walk('./data/csv', function(err, files){
+walk('../../data/csv', function(err, files){
 	files.forEach(function(file){
-		if(path.extname(file) !== '.csv') return;
-
+		if(path.extname(file) !== '.gz') return;
 		var inp = fs.createReadStream(file);
-		var out = fs.createWriteStream(file + '.gz');
-		inp.pipe(zlib.createGzip()).pipe(out);
+		var out = fs.createWriteStream(file.replace('.gz', ''));
+		inp.pipe(zlib.createGunzip()).pipe(out);
 	});
 });

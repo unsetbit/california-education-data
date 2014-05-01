@@ -3,3 +3,5 @@ node_modules
 tmp
 data/mdb
 data/**/*.csv
+*.sqlite3
+

@@ -11,7 +11,12 @@
     "zip": "^1.2.0",
     "event-stream": "^3.1.2",
     "lodash": "^2.4.1",
-    "odbc": "^0.6.6"
+    "odbc": "^0.6.6",
+    "levelup": "^0.18.3",
+    "fast-csv": "^0.2.4",
+    "leveldown": "^0.10.2",
+    "map-reduce": "^5.1.0",
+    "sqlite3": "^2.2.3"
   },
   "devDependencies": {},
   "scripts": {
