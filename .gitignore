@@ -2,6 +2,7 @@ node_modules
 .dat
 tmp
 data/mdb
+data/csv-cleaned
 data/**/*.csv
 *.sqlite3
 

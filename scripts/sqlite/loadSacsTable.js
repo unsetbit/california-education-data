@@ -20,7 +20,7 @@ var counter = 0;
 var yearCount = years.length;
 var start = Date.now();
 
-var db = new sqlite.Database('../../data/cal-ed-annual-financial-data.sqlite3', function(){
+var db = new sqlite.Database('../../data/sqlite/cal-ed-annual-financial-data.sqlite3', function(){
 	db.serialize(function() {
 		db.run("PRAGMA synchronous=OFF");
 		db.run("PRAGMA count_changes=OFF");
