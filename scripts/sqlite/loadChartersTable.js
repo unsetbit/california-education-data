@@ -117,6 +117,10 @@ function start(){
 
 		function writeIt(){
 			rows.forEach(function(row){
+				if(row.StartingYear <= 2006){ // These were only 3 digit until 2007
+					row.CharterNumber = "0" + row.CharterNumber;
+				}
+				
 				insert.run(
 					row.StartingYear,
 					row.Ccode, 
