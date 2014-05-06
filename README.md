@@ -22,6 +22,8 @@ The Academic Performance Index data can be updated by running `npm install; node
 
 The files are retrieved from http://www.cde.ca.gov/ta/ac/ap/apidatafiles.asp. The data files are converted to CSV and the layout html pages are converted to JSON files. For convenience, a header line is added to the CSV which is the names of the fields from the layout file.
 
+There are scripts in `scripts/mongo` which can be used to load this data to a mongodb instance and clean it up a bit for running map/reduce on.
+
 ### Annual Financial  Data (SACS and ALT)
 This data is a bit trickier to update since they're distributed as self-extracting .EXEs here: http://www.cde.ca.gov/ds/fd/fd/. I've downloaded the exes, extracted them, then ran the resulting .mdb files against [mdbToCsv](https://github.com/oztu/mdbToCsv) to generate to csv files. Finally, I ran `node ./scripts/setup/zipCsvs.js` to gzip them in order to appease GitHub's limitation on large file sizes.
 
