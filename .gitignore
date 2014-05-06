@@ -3,6 +3,8 @@ node_modules
 tmp
 data/mdb
 data/csv-cleaned
+data/mongo
+data/tsv
 data/**/*.csv
 *.sqlite3
 
