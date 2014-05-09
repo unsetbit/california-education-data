@@ -11,11 +11,10 @@ MongoClient.connect('mongodb://localhost/caleddata', function(err, db){
 	var apis = db.collection('api');
 	var schools = db.collection('schools');
 
-	schools.find({ Latitude: {$ne: ''}, School: {$ne: ''}}, {Latitude: 1, Longitude: 1, School: 1}).toArray(function(err, schoolList){
+	schools.find({ccode: {$ne: '00'}, scode: {$ne:'0000000'}}, {NCESDist: 1, District: 1}).toArray(function(err, dlist){
 		if(err) return console.error(err);
 		
-		var ids = schoolList.map(function(school){return school._id});
-
+		var ids = dlist.map(function(d){return d._id});
 
 		function generateAPILatLongCSV(filePath, year, type){
 			var deferred = q.defer();
@@ -30,14 +29,14 @@ MongoClient.connect('mongodb://localhost/caleddata', function(err, db){
 					return;
 				}
 				
-				// merge school list to apilist
+				// merge district list to apilist
 				merged = apiList.map(function(api){
-					var school = schoolList.filter(function(school){
-						return school._id === api.CDS; 
+					var d = dlist.filter(function(d){
+						return d._id === api.CDS; 
 					})[0];
 
-					school.API = api.API;
-					return school;
+					d.API = api.API;
+					return d;
 				});
 
 				csv.writeToPath(filePath, merged, { headers: true }).on('finish', function(){
@@ -51,9 +50,8 @@ MongoClient.connect('mongodb://localhost/caleddata', function(err, db){
 
 		var baseDir = path.join(__dirname, '../../data/csv/generated/APILatLong/');
 		mkdirp.sync(baseDir);
-		generateAPILatLongCSV(baseDir + '2012base.csv', 2012, 'base').then(function(){
-			return generateAPILatLongCSV(baseDir + '2011base.csv', 2011, 'base');
-		}).then(function(){
+		generateAPILatLongCSV(baseDir + '2012-base-api.csv', 2012, 'base')
+		.then(function(){
 			console.log('DONE!');
 			db.close();
 		});
